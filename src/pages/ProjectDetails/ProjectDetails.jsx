@@ -6,6 +6,8 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { PlusIcon } from '@radix-ui/react-icons'
 import React from 'react'
 import InviteUserForm from './InviteUserForm'
+import IssueList from '../Issues/IssueList'
+import ChatBox from './ChatBox'
 
 const ProjectDetails = () => {
   const handleProjectInvitation = () => {
@@ -58,13 +60,33 @@ const ProjectDetails = () => {
                   <p>FullStack</p>
                 </div>
                 <div className='flex'>
-                  <p className='w-36'>Project Lead :</p>
-                  <Badge className="cursor-pointer">Karthi</Badge>
+                  <p className='w-36'>Status :</p>
+                  <Badge className="cursor-pointer">Done</Badge>
                 </div>
               </div>
+              <section>
+                <p className='py-5 border-b text-lg -tracking-wider'>Tasks</p>
+                <div className='lg:flex md:flex gap-3 justify-between py-5'>
+                  <IssueList
+                    status="pending"
+                    title="Todo List"
+                  />
+                  <IssueList
+                    status="in_progress"
+                    title="In progress"
+                  />
+                  <IssueList
+                    status="done"
+                    title="Done"
+                  />
+                </div>
+              </section>
             </div>
             
           </ScrollArea>
+          <div>
+            <ChatBox/>
+          </div>
         </div>
       </div>
     </>
