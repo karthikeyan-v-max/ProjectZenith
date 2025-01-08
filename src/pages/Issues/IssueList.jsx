@@ -15,9 +15,12 @@ const IssueList = ({title , status}) => {
                     <CardTitle>{title}</CardTitle>
                 </CardHeader>
                 <CardContent className="px-2">
-                    <div className="space-y-2">
+                    {[1,1,1].map(item =>(
+                        <div key={item} className="space-y-2">
                         <IssueCard/>
                     </div>
+                    ))}
+                    
                 </CardContent>
                 <CardFooter>
                     <DialogTrigger>
